@@ -30,6 +30,8 @@ target 'halkaarzincesoy' do
   project 'halkaarzincesoy.xcodeproj'
   config = use_native_modules!
 
+  $RNFirebaseAnalyticsEnableAdSupport = true
+
   use_react_native!(
     :path => config[:reactNativePath],
     # Enables Flipper.
