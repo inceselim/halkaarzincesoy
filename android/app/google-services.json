@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "895054682003",
+    "project_id": "halkaarz-5aeda",
+    "storage_bucket": "halkaarz-5aeda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895054682003:android:e1d05f13ecc9e9c6963a66",
+        "android_client_info": {
+          "package_name": "com.halkaarzincesoy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtBE9bD5PsNb_KmzslbdAd7AzK815tFwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
