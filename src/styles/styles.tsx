@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
     },
     textBig: {
         fontSize: fontSize.l,
+        lineHeight: 28,
     },
     textNormal: {
         fontSize: fontSize.m,
