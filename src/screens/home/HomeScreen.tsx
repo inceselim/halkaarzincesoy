@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
+import { styles } from '../../styles/styles';
 // ...
 
 export default function HomeScreen() {
@@ -15,8 +16,10 @@ export default function HomeScreen() {
     //     });
     // }
     return (
-        <View>
-            <Text></Text>
-        </View>
+        <SafeAreaView style={styles.container}>
+            <View style={styles.content}>
+                <Text style={styles.textTitle}>Son Halka Arzlar</Text>
+            </View>
+        </SafeAreaView>
     );
 }
