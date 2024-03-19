@@ -28,6 +28,7 @@ export const styles = StyleSheet.create({
     textBig: {
         fontSize: fontSize.l,
         lineHeight: 28,
+        color: colors.black
     },
     textNormal: {
         fontSize: fontSize.m,
@@ -37,6 +38,7 @@ export const styles = StyleSheet.create({
     textBold: {
         fontSize: fontSize.m,
         fontWeight: "bold",
+        color: colors.black
     },
     textPrimaryColor: {
         color: colors.primaryColor

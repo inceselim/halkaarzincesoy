@@ -1,44 +1,63 @@
-import React from 'react';
-import { View, Text, SafeAreaView, ScrollView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, SafeAreaView, ScrollView, FlatList } from 'react-native';
 import { styles } from '../../styles/styles';
+import firestore from '@react-native-firebase/firestore';
 import { CardView } from '../../components/CardView/CardView';
 import { ButtonPrimary } from '../../components/ButtonPrimary/ButtonPrimary';
-// ...
+
 
 export default function HomeScreen() {
-    // async () => {
-    //     const appInstanceId = await analytics().getAppInstanceId();
-    //     await analytics().setAnalyticsCollectionEnabled(true);
+    const [dataSonHalkaArz, setDataSonHalkaArz] = useState([])
+    useEffect(() => {
+        const subscriber = firestore()
+            .collection('sonhalkaarz')
+            .onSnapshot(querySnapshot => {
+                const data: any = [];
+                querySnapshot.forEach(documentSnapshot => {
+                    data.push({
+                        ...documentSnapshot.data(),
+                        key: documentSnapshot.id,
 
-    //     await firebase.analytics().setConsent({
-    //         analytics_storage: true,
-    //         ad_storage: true,
-    //         ad_user_data: true,
-    //         ad_personalization: true,
-    //     });
-    // }
+                    });
+                });
+                setDataSonHalkaArz(data);
+                console.log("dat" + dataSonHalkaArz)
+            });
+        // Unsubscribe from events when no longer in use
+        return () => subscriber();
+    }, []);
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <ScrollView>
-                    <Text style={styles.textTitle}>Son Halka Arzlar</Text>
-                    <CardView>
-                        <Text style={styles.textTitle}>HisseKod</Text>
-                        <Text style={styles.textNormal}>HisseAdı</Text>
-                        <Text />
-                        <View style={styles.viewRowsSpaceBetween}>
-                            <Text style={styles.textBig}>Başlama Tarihi:</Text>
-                            <Text style={styles.textBig}>04.03.2024</Text>
-                        </View>
-                        <View style={styles.viewRowsSpaceBetween}>
-                            <Text style={styles.textBig}>Bitiş Tarihi:</Text>
-                            <Text style={styles.textBig}>04.03.2024</Text>
-                        </View>
-                    </CardView>
+                <View style={{ flex: 0.4 }}>
                     <ButtonPrimary text="Halka Arzlar" />
                     <ButtonPrimary text="Borsa Eğitimleri" />
                     <ButtonPrimary text="Teknik Analizler" />
-                </ScrollView>
+                    <ButtonPrimary text="Formasyonlar" />
+                    <Text style={styles.textTitle}>Son Halka Arzlar</Text>
+                </View>
+
+                <View style={{ flex: 0.6 }}>
+                    <FlatList data={dataSonHalkaArz}
+                        renderItem={({ item }: any) => {
+                            console.log("itetm: ", item)
+                            return (
+                                <CardView>
+                                    <Text style={styles.textTitle}>{item?.code}</Text>
+                                    <Text style={styles.textNormal}>{item?.sirket}</Text>
+                                    <Text />
+                                    <View style={styles.viewRowsSpaceBetween}>
+                                        <Text style={styles.textBig}>Başlama Tarihi:</Text>
+                                        <Text style={styles.textBig}>{item?.begindate}</Text>
+                                    </View>
+                                    <View style={styles.viewRowsSpaceBetween}>
+                                        <Text style={styles.textBig}>Bitiş Tarihi:</Text>
+                                        <Text style={styles.textBig}>{item?.enddate}</Text>
+                                    </View>
+                                </CardView>
+                            )
+                        }} />
+                </View>
             </View>
         </SafeAreaView>
     );
