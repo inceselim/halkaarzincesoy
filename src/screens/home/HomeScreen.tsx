@@ -4,9 +4,11 @@ import { styles } from '../../styles/styles';
 import firestore from '@react-native-firebase/firestore';
 import { CardView } from '../../components/CardView/CardView';
 import { ButtonPrimary } from '../../components/ButtonPrimary/ButtonPrimary';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function HomeScreen() {
+    const navigation: any = useNavigation();
     const [dataSonHalkaArz, setDataSonHalkaArz] = useState([])
     useEffect(() => {
         const subscriber = firestore()
@@ -30,7 +32,8 @@ export default function HomeScreen() {
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
                 <View style={{ flex: 0.4 }}>
-                    <ButtonPrimary text="Halka Arzlar" />
+                    <ButtonPrimary text="Halka Arzlar"
+                        onPress={() => navigation.navigate("HalkaArz")} />
                     <ButtonPrimary text="Borsa Eğitimleri" />
                     <ButtonPrimary text="Teknik Analizler" />
                     <ButtonPrimary text="Formasyonlar" />
@@ -39,6 +42,11 @@ export default function HomeScreen() {
 
                 <View style={{ flex: 0.6 }}>
                     <FlatList data={dataSonHalkaArz}
+                        ListEmptyComponent={
+                            <CardView>
+                                <Text style={styles.textTitle}>Aktif Halka Arz Bulunamadı...</Text>
+                            </CardView>
+                        }
                         renderItem={({ item }: any) => {
                             console.log("itetm: ", item)
                             return (
