@@ -36,7 +36,8 @@ export default function HomeScreen() {
                         onPress={() => navigation.navigate("HalkaArz")} />
                     <ButtonPrimary text="Borsa Eğitimleri" />
                     <ButtonPrimary text="Teknik Analizler" />
-                    <ButtonPrimary text="Formasyonlar" />
+                    <ButtonPrimary text="Formasyonlar"
+                        onPress={() => navigation.navigate("Formasyon")} />
                     <Text style={styles.textTitle}>Son Halka Arzlar</Text>
                 </View>
 
