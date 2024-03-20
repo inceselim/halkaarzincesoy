@@ -5880,7 +5880,7 @@ react-native-tracking-transparency@^0.1.2:
   resolved "https://registry.npmjs.org/react-native-tracking-transparency/-/react-native-tracking-transparency-0.1.2.tgz"
   integrity sha512-oe+BFutdq+fnTgyC9pAm/NEz6nuYkEHpFQUU8swj+E5oOOPqGmrNXmseNatKob521Zh7w0ovxXkoQNTV+PKTFA==
 
-react-native-webview@^13.8.1, react-native-webview@>=7.0.0:
+react-native-webview@^13.7.0, react-native-webview@>=7.0.0:
   version "13.8.1"
   resolved "https://registry.npmjs.org/react-native-webview/-/react-native-webview-13.8.1.tgz"
   integrity sha512-7Jqm1WzWJrOWraBAXQfKtr/Uo5Jw/IJHzC40jYLwgV/eVGmLJ9BpGKw6QVw7wpRkjmTZ2Typ4B1aHJLJJQFslA==

@@ -31,17 +31,18 @@ export default function HomeScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <View style={{ flex: 0.4 }}>
+                <View>
                     <ButtonPrimary text="Halka Arzlar"
                         onPress={() => navigation.navigate("HalkaArz")} />
-                    <ButtonPrimary text="Borsa Eğitimleri" />
-                    <ButtonPrimary text="Teknik Analizler" />
+                    {/* <ButtonPrimary text="Borsa Eğitimleri" /> */}
+                    <ButtonPrimary text="Teknik Analizler"
+                        onPress={() => navigation.navigate("Analiz")} />
                     <ButtonPrimary text="Formasyonlar"
                         onPress={() => navigation.navigate("Formasyon")} />
                     <Text style={styles.textTitle}>Son Halka Arzlar</Text>
                 </View>
 
-                <View style={{ flex: 0.6 }}>
+                <View style={{ flex: 1 }}>
                     <FlatList data={dataSonHalkaArz}
                         ListEmptyComponent={
                             <CardView>

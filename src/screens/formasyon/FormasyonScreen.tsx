@@ -9,32 +9,32 @@ export default function FormasyonScreen() {
                 <ScrollView>
                     <Text style={styles.textTitle}>Formasyonlar</Text>
                     <Image source={require("./11.jpeg")} style={{
-                        height: 300,
+                        height: 250,
                         width: "100%",
                         resizeMode: "contain"
                     }} />
                     <Image source={require("./12.png")} style={{
-                        height: 300,
+                        height: 250,
                         width: "100%",
                         resizeMode: "contain"
                     }} />
                     <Image source={require("./13.jpeg")} style={{
-                        height: 300,
+                        height: 250,
                         width: "100%",
                         resizeMode: "contain"
                     }} />
                     <Image source={require("./133.jpeg")} style={{
-                        height: 300,
+                        height: 250,
                         width: "100%",
                         resizeMode: "contain"
                     }} />
                     <Image source={require("./134.jpeg")} style={{
-                        height: 300,
+                        height: 250,
                         width: "100%",
                         resizeMode: "contain"
                     }} />
                     <Image source={require("./135.jpeg")} style={{
-                        height: 300,
+                        height: 250,
                         width: "100%",
                         resizeMode: "contain"
                     }} />
