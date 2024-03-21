@@ -5,11 +5,14 @@ import firestore from '@react-native-firebase/firestore';
 import { CardView } from '../../components/CardView/CardView';
 import { ButtonPrimary } from '../../components/ButtonPrimary/ButtonPrimary';
 import { useNavigation } from '@react-navigation/native';
+import G1 from '../../ads/G1';
+import B1 from '../../ads/B1';
 
 
 export default function HomeScreen() {
     const navigation: any = useNavigation();
     const [dataSonHalkaArz, setDataSonHalkaArz] = useState([])
+    G1()
     useEffect(() => {
         const subscriber = firestore()
             .collection('sonhalkaarz')
@@ -64,9 +67,20 @@ export default function HomeScreen() {
                                         <Text style={styles.textBig}>Bitiş Tarihi:</Text>
                                         <Text style={styles.textBig}>{item?.enddate}</Text>
                                     </View>
+                                    <Text />
+                                    <View style={styles.viewRowsSpaceBetween}>
+                                        <Text style={styles.textBig}>Fiyat:</Text>
+                                        <Text style={styles.textBig}>{item?.fiyat}</Text>
+                                    </View>
+                                    <Text />
+                                    <View style={styles.viewRowsSpaceBetween}>
+                                        <Text style={styles.textBig}>İlk İşlem:</Text>
+                                        <Text style={styles.textBig}>{item?.ilkislem}</Text>
+                                    </View>
                                 </CardView>
                             )
                         }} />
+                    <B1 />
                 </View>
             </View>
         </SafeAreaView>

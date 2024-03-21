@@ -5,9 +5,11 @@ import firestore from '@react-native-firebase/firestore';
 import { CardView } from '../../components/CardView/CardView';
 import { ButtonPrimary } from '../../components/ButtonPrimary/ButtonPrimary';
 import { useNavigation } from '@react-navigation/native';
+import G1 from '../../ads/G1';
 
 export default function HalkaArzScreen() {
     const [dataHalkaArz, setDataHalkaArz] = useState([])
+    G1()
     useEffect(() => {
         const subscriber = firestore()
             .collection('halkaarz')
@@ -49,6 +51,16 @@ export default function HalkaArzScreen() {
                                 <View style={styles.viewRowsSpaceBetween}>
                                     <Text style={styles.textBig}>Bitiş Tarihi:</Text>
                                     <Text style={styles.textBig}>{item?.enddate}</Text>
+                                </View>
+                                <Text />
+                                <View style={styles.viewRowsSpaceBetween}>
+                                    <Text style={styles.textBig}>Fiyat:</Text>
+                                    <Text style={styles.textBig}>{item?.fiyat}</Text>
+                                </View>
+                                <Text />
+                                <View style={styles.viewRowsSpaceBetween}>
+                                    <Text style={styles.textBig}>İlk İşlem:</Text>
+                                    <Text style={styles.textBig}>{item?.ilkislem}</Text>
                                 </View>
                             </CardView>
                         )
