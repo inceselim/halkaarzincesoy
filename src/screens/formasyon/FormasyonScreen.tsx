@@ -2,9 +2,11 @@ import React from 'react';
 import { View, Text, SafeAreaView, Image, ScrollView } from 'react-native';
 import { styles } from '../../styles/styles';
 import G1 from '../../ads/G1';
+import G2 from '../../ads/G2';
 
 export default function FormasyonScreen() {
     G1()
+    G2()
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>

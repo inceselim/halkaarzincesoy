@@ -3,9 +3,11 @@ import { View, Text, SafeAreaView, ScrollView, ActivityIndicator } from 'react-n
 import { styles } from '../../styles/styles';
 import YoutubePlayer from "react-native-youtube-iframe";
 import G1 from '../../ads/G1';
+import G2 from '../../ads/G2';
 
 export default function AnalizScreen() {
     G1()
+    G2()
     const [playing, setPlaying] = useState(false);
 
     const onStateChange = useCallback((state: any) => {

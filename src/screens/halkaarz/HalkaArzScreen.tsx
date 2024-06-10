@@ -6,10 +6,12 @@ import { CardView } from '../../components/CardView/CardView';
 import { ButtonPrimary } from '../../components/ButtonPrimary/ButtonPrimary';
 import { useNavigation } from '@react-navigation/native';
 import G1 from '../../ads/G1';
+import G2 from '../../ads/G2';
 
 export default function HalkaArzScreen() {
     const [dataHalkaArz, setDataHalkaArz] = useState([])
     G1()
+    G2()
     useEffect(() => {
         const subscriber = firestore()
             .collection('halkaarz')

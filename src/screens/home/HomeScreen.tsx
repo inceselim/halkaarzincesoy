@@ -7,12 +7,16 @@ import { ButtonPrimary } from '../../components/ButtonPrimary/ButtonPrimary';
 import { useNavigation } from '@react-navigation/native';
 import G1 from '../../ads/G1';
 import B1 from '../../ads/B1';
+import G2 from '../../ads/G2';
+import B2 from '../../ads/B2';
+import B3 from '../../ads/B3';
 
 
 export default function HomeScreen() {
     const navigation: any = useNavigation();
     const [dataSonHalkaArz, setDataSonHalkaArz] = useState([])
     G1()
+    G2()
     useEffect(() => {
         const subscriber = firestore()
             .collection('sonhalkaarz')
@@ -81,6 +85,8 @@ export default function HomeScreen() {
                             )
                         }} />
                     <B1 />
+                    <B2 />
+                    <B3 />
                 </View>
             </View>
         </SafeAreaView>
