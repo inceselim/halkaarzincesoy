@@ -84,9 +84,11 @@ export default function HomeScreen() {
                                 </CardView>
                             )
                         }} />
-                    <B1 />
-                    <B2 />
-                    <B3 />
+                    <View style={{ alignItems: "center" }}>
+                        <B1 />
+                        <B2 />
+                        <B3 />
+                    </View>
                 </View>
             </View>
         </SafeAreaView>
